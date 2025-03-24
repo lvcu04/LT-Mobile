@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -54,12 +53,27 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(150),
-            child: Image.asset(imagePath, width: 200 ,height: 200,fit: BoxFit.cover),
+            child: Image.asset(
+              imagePath,
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(height: 20),
-          Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white)),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
           const SizedBox(height: 10),
-          Text(subtitle, style: const TextStyle(fontSize: 20, color: Colors.white70)),
+          Text(
+            subtitle,
+            style: const TextStyle(fontSize: 20, color: Colors.white70),
+          ),
         ],
       ),
     );
@@ -91,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -99,7 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        titleTextStyle: const TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       body: SafeArea(
         child: Column(
@@ -113,18 +131,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
                 children: [
-                   buildPage(
+                  buildPage(
                     color: Colors.red,
                     imagePath: 'assets/images/avatar-1.png',
                     title: 'Lê Văn Cừ',
                     subtitle: 'MSSS:2251120275',
-                   
                   ),
                   buildPage(
                     color: Colors.green,
-                    imagePath: 'assets/images/2.jpg',
-                    title: 'Page 2',
-                    subtitle: 'This is page 2',
+                    imagePath: 'assets/images/avatar-2.png',
+                    title: 'Võ Nhi Anh',
+                    subtitle: 'MSSV:2251120267',
                   ),
                   buildPage(
                     color: Colors.blue,
@@ -134,53 +151,53 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-            ),            
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
-                   // Khoảng cách hai bên
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Prev
-                      TextButton(
-                        onPressed: currentIndex > 0 ? prevPage : null,
-                        child: Text(
-                          "Prev",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: currentIndex > 0 ? Colors.black : Colors.grey,
-                          ),
-                        ),
-                      ),
-
-                      // SmoothPageIndicator
-                      SmoothPageIndicator(
-                        controller: pageController,
-                        count: 3,
-                        effect: WormEffect(
-                          spacing: 12.0,
-                          dotColor: Colors.purple.shade300,
-                          activeDotColor: Colors.purple.shade900,
-                        ),
-                      ),
-
-                      // Next
-                      TextButton(
-                        onPressed: currentIndex < 2 ? nextPage : null,
-                        child: Text(
-                          "Next",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: currentIndex < 2 ? Colors.black : Colors.grey,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
             ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 25),
+              // Khoảng cách hai bên
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Prev
+                  TextButton(
+                    onPressed: currentIndex > 0 ? prevPage : null,
+                    child: Text(
+                      "Prev",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: currentIndex > 0 ? Colors.black : Colors.grey,
+                      ),
+                    ),
+                  ),
+
+                  // SmoothPageIndicator
+                  SmoothPageIndicator(
+                    controller: pageController,
+                    count: 3,
+                    effect: WormEffect(
+                      spacing: 12.0,
+                      dotColor: Colors.purple.shade300,
+                      activeDotColor: Colors.purple.shade900,
+                    ),
+                  ),
+
+                  // Next
+                  TextButton(
+                    onPressed: currentIndex < 2 ? nextPage : null,
+                    child: Text(
+                      "Next",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: currentIndex < 2 ? Colors.black : Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-      );    
-   }
+      ),
+    );
+  }
 }
