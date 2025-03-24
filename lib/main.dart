@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void nextPage() {
-    if (currentIndex < 2) {
+    if (currentIndex < 3) {
       setState(() {
         currentIndex++;
       });
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         curve: Curves.easeInOut,
       );
     }
-  }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -149,6 +149,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     title: 'Nguyễn Phúc Đỉnh',
                     subtitle: 'MSSV:2251120286',
                   ),
+                  buildPage(
+                    color: Colors.greenAccent,
+                    imagePath: 'assets/images/avatar-4.png',
+                    title: 'Lê Hữu Thông',
+                    subtitle: 'MSSV:2251120321',
+                  ),
                 ],
               ),
             ),
@@ -173,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // SmoothPageIndicator
                   SmoothPageIndicator(
                     controller: pageController,
-                    count: 3,
+                    count: 7,
                     effect: WormEffect(
                       spacing: 12.0,
                       dotColor: Colors.purple.shade300,
@@ -183,12 +189,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   // Next
                   TextButton(
-                    onPressed: currentIndex < 2 ? nextPage : null,
+                    onPressed: currentIndex < 3 ? nextPage : null,
                     child: Text(
                       "Next",
                       style: TextStyle(
                         fontSize: 16,
-                        color: currentIndex < 2 ? Colors.black : Colors.grey,
+                        color: currentIndex < 3 ? Colors.black : Colors.grey,
                       ),
                     ),
                   ),
