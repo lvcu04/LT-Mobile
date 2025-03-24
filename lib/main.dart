@@ -145,9 +145,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   buildPage(
                     color: Colors.blue,
-                    imagePath: 'assets/images/3.jpg',
-                    title: 'Page 3',
-                    subtitle: 'This is page 3',
+                    imagePath: 'assets/images/avatar-3.png',
+                    title: 'Nguyễn Phúc Đỉnh',
+                    subtitle: 'MSSV:2251120286',
                   ),
                 ],
               ),
