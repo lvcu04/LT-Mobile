@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void nextPage() {
-    if (currentIndex < 3) {
+    if (currentIndex < 5) {
       setState(() {
         currentIndex++;
       });
@@ -155,6 +155,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     title: 'Lê Hữu Thông',
                     subtitle: 'MSSV:2251120321',
                   ),
+                  buildPage(
+                    color: Colors.greenAccent,
+                    imagePath: 'assets/images/avatar-6.png',
+                    title: 'Nguyễn Quốc Khánh',
+                    subtitle: 'MSSV:2251120297',
+                  ),
                 ],
               ),
             ),
@@ -189,12 +195,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   // Next
                   TextButton(
-                    onPressed: currentIndex < 3 ? nextPage : null,
+                    onPressed: currentIndex < 5 ? nextPage : null,
                     child: Text(
                       "Next",
                       style: TextStyle(
                         fontSize: 16,
-                        color: currentIndex < 3 ? Colors.black : Colors.grey,
+                        color: currentIndex < 5 ? Colors.black : Colors.grey,
                       ),
                     ),
                   ),
