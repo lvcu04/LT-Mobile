@@ -201,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         controller: pageController,
                         count: 6,
                         effect: WormEffect(
-                          spacing: 12.0,
+                          spacing: 12,
                           dotColor: Colors.purple.shade300,
                           activeDotColor: Colors.purple.shade900,
                         ),
