@@ -1,4 +1,4 @@
-name: LT_mobile
+name: lt_mobile
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -41,4 +41,5 @@ flutter:
         - assets/images/avatar-2.png
         - assets/images/avatar-3.png
         - assets/images/avatar-4.png
+        - assets/images/avatar-5.jpg
         - assets/images/avatar-6.png

@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void nextPage() {
-    if (currentIndex < 5) {
+    if (currentIndex < 6) {
       setState(() {
         currentIndex++;
       });
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         curve: Curves.easeInOut,
       );
     }
-  } 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -157,6 +157,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   buildPage(
                     color: Colors.greenAccent,
+                    imagePath: 'assets/images/avatar-5.jpg',
+                    title: 'Nguyễn Tâm Bảo',
+                    subtitle: 'MSSV:2251120270',
+                  ),
+                  buildPage(
+                    color: Colors.greenAccent,
                     imagePath: 'assets/images/avatar-6.png',
                     title: 'Nguyễn Quốc Khánh',
                     subtitle: 'MSSV:2251120297',
@@ -166,41 +172,57 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 25),
-              // Khoảng cách hai bên
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // Prev
-                  TextButton(
-                    onPressed: currentIndex > 0 ? prevPage : null,
-                    child: Text(
-                      "Prev",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: currentIndex > 0 ? Colors.black : Colors.grey,
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton(
+                        onPressed: currentIndex > 0 ? prevPage : null,
+                        child: Text(
+                          "Prev",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color:
+                                currentIndex > 0 ? Colors.black : Colors.grey,
+                          ),
+                        ),
                       ),
                     ),
                   ),
 
                   // SmoothPageIndicator
-                  SmoothPageIndicator(
-                    controller: pageController,
-                    count: 7,
-                    effect: WormEffect(
-                      spacing: 12.0,
-                      dotColor: Colors.purple.shade300,
-                      activeDotColor: Colors.purple.shade900,
+                  Expanded(
+                    flex: 2, // Cho nhiều không gian hơn
+                    child: Center(
+                      child: SmoothPageIndicator(
+                        controller: pageController,
+                        count: 6,
+                        effect: WormEffect(
+                          spacing: 12.0,
+                          dotColor: Colors.purple.shade300,
+                          activeDotColor: Colors.purple.shade900,
+                        ),
+                      ),
                     ),
                   ),
 
                   // Next
-                  TextButton(
-                    onPressed: currentIndex < 5 ? nextPage : null,
-                    child: Text(
-                      "Next",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: currentIndex < 5 ? Colors.black : Colors.grey,
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: currentIndex < 6 ? nextPage : null,
+                        child: Text(
+                          "Next",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color:
+                                currentIndex < 6 ? Colors.black : Colors.grey,
+                          ),
+                        ),
                       ),
                     ),
                   ),
