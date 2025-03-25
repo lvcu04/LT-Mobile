@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void nextPage() {
-    if (currentIndex < 6) {
+    if (currentIndex < 7) {
       setState(() {
         currentIndex++;
       });
@@ -167,6 +167,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     title: 'Nguyễn Quốc Khánh',
                     subtitle: 'MSSV:2251120297',
                   ),
+                  buildPage(
+                    color: Colors.pinkAccent,
+                    imagePath: 'assets/images/avatar-7.png',
+                    title: 'Nguyễn Thị Minh Duyên',
+                    subtitle: 'MSSV:2251120412',
+                  ),
                 ],
               ),
             ),
@@ -199,9 +205,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Center(
                       child: SmoothPageIndicator(
                         controller: pageController,
-                        count: 6,
+                        count: 7,
                         effect: WormEffect(
-                          spacing: 12,
+                          spacing: 8,
                           dotColor: Colors.purple.shade300,
                           activeDotColor: Colors.purple.shade900,
                         ),
@@ -214,13 +220,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: currentIndex < 6 ? nextPage : null,
+                        onPressed: currentIndex < 7 ? nextPage : null,
                         child: Text(
                           "Next",
                           style: TextStyle(
                             fontSize: 16,
                             color:
-                                currentIndex < 6 ? Colors.black : Colors.grey,
+                                currentIndex < 7 ? Colors.black : Colors.grey,
                           ),
                         ),
                       ),
