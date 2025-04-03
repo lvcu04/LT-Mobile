@@ -16,6 +16,7 @@ dependencies:
     cupertino_icons: ^1.0.8
     smooth_page_indicator: ^1.2.1
 
+
 dev_dependencies:
     flutter_test:
         sdk: flutter
@@ -43,3 +44,4 @@ flutter:
         - assets/images/avatar-4.png
         - assets/images/avatar-5.jpg
         - assets/images/avatar-6.png
+        - assets/images/avatar-7.png
